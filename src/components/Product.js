@@ -40,6 +40,7 @@ class Product extends React.Component {
                     let flag = product.availableSizes.includes(activeSize[i])
                     if (flag) {
                         products.push(product)}
+                        return;
                     }
             })
         }
@@ -64,7 +65,7 @@ class Product extends React.Component {
                         {products.map((product, index) => (
                             <article key={index} className={"flex-24 text-center mr-1 mb-7 p-4 relative hover:border border-yellow-500"}
                             >
-                                <img src={"/images/static/products/" + product.sku + "_1.jpg"} />
+                                <img src={"/images/static/products/" + product.sku + "_1.jpg"} alt=""/>
                                 <h5 className="my-3 h-11">{product.title}</h5>
                                 <hr className="w-1/6 text-yellow-200 my-0 mx-auto w-1/12 mb-3" />
                                 <h6 className="text-sm inline-block mr-1.5">$</h6><span className="text-xl">{product.price.toFixed(2)}</span>

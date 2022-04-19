@@ -28,7 +28,7 @@ class App extends React.Component {
     handleSize = (event)=>{
         let val = event.target.innerText;
         let sizes = this.state.activeSize;
-        if(sizes.indexOf(val) == -1){
+        if(sizes.indexOf(val) === -1){
             sizes.push(val);
         }
         else{
@@ -46,7 +46,7 @@ class App extends React.Component {
         }
         else{
             productArr.map(item=>{
-               if(item.id == product.id){
+               if(item.id === product.id){
                    item.quantity = item.quantity + 1
                }
             })
@@ -60,6 +60,7 @@ class App extends React.Component {
             productArr.map(item=>{
                if(item.id == product.id){
                    item.quantity = item.quantity + 1
+                   return item;
                }
             })
         this.setState({
@@ -69,8 +70,9 @@ class App extends React.Component {
     handleDecrement = (product,index)=>{
         let productArr= this.state.productCart;
             productArr.map(item=>{
-               if(item.id == product.id && item.quantity >1){
+               if(item.id === product.id && item.quantity >1){
                    item.quantity = item.quantity - 1
+                   return item;
                }
             })
         this.setState({

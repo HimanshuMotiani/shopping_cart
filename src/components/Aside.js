@@ -1,8 +1,5 @@
 import React from 'react'
 class Aside extends React.Component{
-    constructor(props){
-        super(props)
-    }
 
     changeBackground = (e)=>{
         e.target.style.border = "1px solid"

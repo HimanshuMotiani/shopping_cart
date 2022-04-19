@@ -33,8 +33,8 @@ class Cart extends React.Component {
         
         return (
             <>
-                <div className={this.state.cartOpen == false ?"relative ":"relative hidden"}>
-                <button  onClick={this.handleCart}><img className="h-18 w-20 bg-black p-4" src="/images/static/bag-icon.png"/></button>
+                <div className={this.state.cartOpen === false ?"relative ":"relative hidden"}>
+                <button  onClick={this.handleCart}><img className="h-18 w-20 bg-black p-4" src="/images/static/bag-icon.png" alt=""/></button>
                 <div className="bg-yellow-400 text-black rounded-full w-6 flex items-center justify-center absolute top-12 right-120">{totalProducts}</div>
                 </div>
 
@@ -43,15 +43,15 @@ class Cart extends React.Component {
                         <div className="pt-12 bg-black mx-auto px-4">
                             <span className="text-white cursor-pointer" onClick={this.closeCart}>X</span>
                             <div className="relative align-top text-center">
-                                <button onClick={this.handleCart}><img className="h-14 w-14 bg-black" src="/images/static/bag-icon.png" /></button>
+                                <button onClick={this.handleCart}><img className="h-14 w-14 bg-black" src="/images/static/bag-icon.png" alt="" /></button>
                                 <div className="bg-yellow-400 text-black rounded-full w-6 flex items-center justify-center absolute top-10 right-52">{totalProducts}</div>
                                 <span className="text-white text-2xl ml-4">Cart</span>
                             </div>
                             {
                                 allProducts.map((product, index) => (
-                                    <article className="flex items-center text-white mt-8 mb-4 bg-gray-800 justify-between">
+                                    <article key={index} className="flex items-center text-white mt-8 mb-4 bg-gray-800 justify-between">
                                         <div>
-                                            <img className="w-26 h-28" src={`/images/static/products/${product.sku}_2.jpg`} />
+                                            <img className="w-26 h-28" src={`/images/static/products/${product.sku}_2.jpg`} alt=""/>
                                         </div>
                                         <div className="ml-4">
                                             <h5>{product.title}</h5>
